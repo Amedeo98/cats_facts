@@ -1,4 +1,3 @@
-// reducers.js
 import {
   FETCH_CAT_FACT_LIST_REQUEST, FETCH_CAT_FACT_LIST_SUCCESS, FETCH_CAT_FACT_LIST_FAILURE, FETCH_UPDATE_PAGE
 } from '../actions/cat_fact';
@@ -18,6 +17,7 @@ const initialState = {
 const addKittenImg = (list) => {
   let index = 0;
   for(let cat_fact of list){
+    //need to restart after 16 images due to the limitation of the api itself
     let num = index - Math.floor(index/16)*16 + 1;
     cat_fact.img = `http://placekitten.com/300/300?image=${num}`;
     index++;

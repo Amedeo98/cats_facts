@@ -18,6 +18,8 @@ function CatFactsPage({ facts, loading, error }) {
         return <div>Error: {error}</div>;
     }
 
+    //load 10 facts per page as the api tells, I got the facts_to_show number, then i sliced the list to this number
+    //fetching every time causes a page render that breaks the user experience 
     let facts_to_show = facts.current_page * 10;
 
     return (

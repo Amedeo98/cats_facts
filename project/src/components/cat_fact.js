@@ -11,17 +11,14 @@ function CatFact({ selectedCatFact, facts, fetchCatFactsList, loading, error }) 
 
     useEffect(() => {
         const catFactIndex = parseInt(index, 10);
-
-        // Verifica se il cat_fact è già presente nella lista
         if (!facts || !facts.list || facts.list.length === 0) {
             fetchCatFactsList();
         } else {
-            // Assegna il cat_fact selezionato
             setLocalSelectedCatFact(facts.list[catFactIndex]);
         }
     }, [index, facts, fetchCatFactsList]);
 
-    // Aggiorna selectedCatFact quando lo stato locale cambia
+
     useEffect(() => {
         if (localSelectedCatFact) {
             selectedCatFact = localSelectedCatFact;

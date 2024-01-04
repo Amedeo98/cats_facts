@@ -28,6 +28,10 @@ export const fetchCatFactsList = (current_page) => {
                 dispatch(updatePage(current_page));
             }
             else {
+                //hardcoded: TODO: get from a first fetch the total and then save it
+                //instead of using the division of the api (10 per page) i decided to fetch them all in one call
+                //then handle the visibility with redux to have a cleaner UX when the user wants to load more facts
+                //(see homepage for more info)
                 res = await fetch('https://catfact.ninja/facts?limit=332');
                 if (!res.ok) {
                     throw new Error('Error in request');
