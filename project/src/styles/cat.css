@@ -1,0 +1,28 @@
+.loading {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+
+    .gif {
+        background-color: transparent;
+        mix-blend-mode: multiply;
+        width: 200px;
+        display: block;
+    }
+
+    span {
+        margin-top: 16px;
+        display: flex; 
+        justify-content: center;
+    }
+
+}
+
+
+.catImg {
+    width: 30%;
+}
+.description {
+    margin: 32px;
+    font-size: 24px;
+}
